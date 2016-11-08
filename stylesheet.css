@@ -1,0 +1,36 @@
+fieldset {
+	display:inline;
+	border-color:black;
+	background-color:#e3e3e3;
+}
+
+.tent {
+	color:black;
+}
+
+.fadeColors{
+	background: linear-gradient(black, #ffb533, white);
+}
+
+td {
+	color:black;
+}
+
+div {
+	text-align:center;	
+}
+
+.firstTent {
+	color:#ffb533;
+	margin-bottom:-5px;
+}
+
+footer {
+	height:115px;
+	background: linear-gradient(white, #ffb533, black);
+	text-align: center;
+}
+
+body {
+	background-color:white;
+}

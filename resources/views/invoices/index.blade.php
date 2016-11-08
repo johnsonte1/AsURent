@@ -45,7 +45,7 @@
                                     <form action="{{ url('invoices/'.$contract->id.'/'.$invoice->id) }}" method="POST">
                                         {{csrf_field()}}
                                         {{method_field('DELETE')}}
-                                        <a href="{{ url('invoice/'.$contract->id.'/'.$invoice->id) }}" class="btn btn-success" role="button">
+                                        <a href="{{ url('invoice/'.$contract->id.'/'.$invoice->id) }}" class="btn btn-success bBtn" role="button">
                                             View
                                         </a>
                                         <button type="submit" id="delete-invoice-{{ $invoice->id }}" class="btn btn-danger">
@@ -62,7 +62,7 @@
         </div>
         
         <div class="row">
-            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#add"><i class="fa fa-plus"></i> Add invoice</button>
+            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#add" id="conBtn"><i class="fa fa-plus"></i> Add invoice</button>
         </div>
         <div class="row panel-body collapse" id="add">
         <!-- Display Validation Errors -->
@@ -83,7 +83,7 @@
             <!-- Add Task Button -->
             <div class="form-group">
                 <div align="center">
-                    <button type="submit" class="btn btn-default">
+                    <button type="submit" class="btn btn-default" id="subBtn">
                         Submit
                     </button>
                 </div>

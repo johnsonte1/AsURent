@@ -3,12 +3,15 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        
+        
+        <div class="col-md-10 col-md-offset-1 testchange">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    You are logged in! This page should show all the contracts.
+                <div class="panel-body container-fluid testchange">
+                    testing change!
+
                 </div>
             </div>
             <form action="{{route('lalatask')}}">

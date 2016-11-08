@@ -1,0 +1,168 @@
+/*
+style for nav bar; nav bar goes throughout application
+Start:
+*/
+.navStyle {
+	background: linear-gradient(to right, black, #ab5403, black);
+}
+
+.shiftLeft {
+    float: left;
+}
+
+.shiftRight {
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+#dynLink:hover {
+    color: white;
+}
+
+
+a {
+    color: white;
+}
+/*end of nav bar styling*/
+
+
+/*
+This is the welcome pages header back ground and opacity
+Start:
+*/
+#head {
+    background-image: url("../image/cabin.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    width: 100%;
+    height: 400px;
+    
+    top: 0px;
+}
+
+#hContainer {
+    background: linear-gradient(to right, black, black, #ab5403, black, black);
+    /*background: radial-gradient(#ab5403, black);*/
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .4;
+    top: 0;
+}
+
+.home {
+    position: relative;
+    margin-top: -20px;
+    
+}
+/*end of welcome page header image*/
+
+
+/*
+change colors of buttons on forms, generic classes
+*/
+.bBtn {
+    background-color: black;
+}
+
+oBtn {
+    background-color: #ab5403;
+}
+
+button:hover, a:hover{
+     background-color: gray;   
+}
+
+/*end*/
+
+/*
+Styling for welcome page information section
+
+Start
+*/
+#contentWrap {
+    background: linear-gradient(to right, black, #e0e0e0, #e0e0e0, #e0e0e0, #e0e0e0, #e0e0e0, black);
+    color: black;
+}
+
+.container2 {
+	width: 970px;
+	/*color: #9e9e9e;*/
+}
+
+.center {
+	margin: auto;
+	width:100%;
+	display: block; 
+	text-align: center;
+}
+
+.smallBox {
+	width: 33%;
+
+}
+
+.row2 {
+	float: left;
+
+	margin: 1px;
+}
+.textCenter {
+	text-align: center;
+}
+
+.grayBack {
+    background-image: url("../image/walkway.jpg");
+    /*background: linear-gradient(to right, black, #a7a7a7, #a7a7a7, #a7a7a7, #a7a7a7, #a7a7a7, black);*/
+    
+     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #e0e0e0;
+    opacity: .4;
+}
+
+.home2 {
+    position: relative;
+    margin-top: -20px;
+    
+}
+
+#lContainer {
+    background: linear-gradient(to right, black, black, #ab5403, black, black);
+    /*background: radial-gradient(#ab5403, black);*/
+    position: absolute;
+    height: 100%;
+    width: 100%;
+ 
+    top: 0;
+}
+/*
+End of styling for welcome page contents
+*/
+
+
+
+
+
+body {
+    background-color: #e0e0e0;
+}
+
+#wMessage {
+        
+    color: white;
+    text-align: center; 
+}
+
+.white {
+    color: #ab5403;
+}
+
+.black {
+    color: black;
+}
+
