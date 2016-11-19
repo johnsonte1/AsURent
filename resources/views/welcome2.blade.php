@@ -5,35 +5,11 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Welcome 
-                @if (Auth::guest())
-                @else
-                {{Auth::user()->name}}
-                @endif</div>
+                <div class="panel-heading">Conveniently send a single payment to AsURent here.
+                </div>
                 
                 <div class="panel-body">
-                    Your Application's Landing Page.
-                </div>
-                <!--PLAID LINK BUTTON-->
-                <!--<form id="some-id" method="POST" action="/plaidcurl"></form>-->
-
-                    <!-- To use Link with longtail institutions on Connect, set the
-                    data-longtail attribute to 'true'. See the Parameter Reference for
-                    additional documentation. -->
-               <!--     <script
-                      src="https://cdn.plaid.com/link/stable/link-initialize.js"
-                      data-client-name="AsURent"
-                      data-form-id="some-id"
-                      data-key="a246cdb456f73cc16c8c6b9c813e4a"
-                      data-product="auth"
-                      data-env="tartan">
-                    </script>
-                <form id="weee" method="POST" action="/plaidcurl">
-                    <button></button>
-                </form>
-                -->
-                <!-- without plaid...-->
-                
+                    
                 <script>
                     //stripe response handler
                       Stripe.setPublishableKey('pk_test_89jOqsSrEjxCjEotST32cFc9');
@@ -53,8 +29,7 @@
                             $form.get(0).submit();
                       }
                     };
-                    
-                    
+
                     //stripe handle submit button
                     $(function() {
                       var $form = $('#payment-form');
@@ -71,17 +46,7 @@
                     });
                     
                 </script>
-             <!--   <script type="text/javascript">
-                    Stripe.setPublishableKey('pk_test_89jOqsSrEjxCjEotST32cFc9');
-                    Stripe.bankAccount.createToken({
-                      country: $('.country').val(),
-                      currency: $('.currency').val(),
-                      routing_number: $('.routing-number').val(),
-                      account_number: $('.account-number').val(),
-                      account_holder_name: $('.name').val(),
-                      account_holder_type: $('.account_holder_type').val()
-                    }, stripeResponseHandler);
-                </script>-->
+             
                 <form action="/payOnce" method="POST" id="payment-form">
                       {{csrf_field()}}
                       <span class="payment-errors"></span>
@@ -119,7 +84,17 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- Plaid Stripe Link?-->
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+              <div class="panel panel-heading">
+                Enable Recurring Billing
+              </div>
+              <div class="panel-body">
+                    
+                
     Connect Bank Account:
     <form id='plaid-link-form' method="POST" action="/plaidcurl"></form>
    <!-- <script
@@ -134,8 +109,8 @@
     <button id='linkButton'>Get Bank Token</button>
    <!-- </form>-->
 <!--<button id='bofaButton'>Open Link - Bank of America</button>-->
-<script src="https://cdn.plaid.com/link/stable/link-initialize.js"></script>
-<script>
+  <script src="https://cdn.plaid.com/link/stable/link-initialize.js"></script>
+  <script>
         var linkHandler = Plaid.create({
           selectAccount: true,
           env: 'tartan',
@@ -215,6 +190,9 @@
         var sendDataToBackendServer = function(){
             
         }
-</script>
+      </script>
+      </div>
+    </div>
+  </div>
 </div>
 @endsection

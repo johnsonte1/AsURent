@@ -91,10 +91,10 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="col-sm-6">
+                <!--<div class="col-sm-6">
                     <label for="contract-tenant" class="col-sm-12">Tenant Email:</label>
                     <input type="email" name="tenant" class="form-control" id="contract-tenant">
-                </div>
+                </div>-->
                 <div class="col-sm-6">
                     <label for="contract-rent" class="col-sm-12">Monthly Rent:</label>
                     <input type="number" name="base_rate" value="1000" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="currency form-control" id="contract-base_rate">

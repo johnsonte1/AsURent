@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Contract;
 use App\Http\Requests;
 use App\User;
+use Auth;
 //
 //
 
@@ -53,6 +54,7 @@ class ContractController extends Controller
         //return redirect('/contracts');
         $this->validate($request, [
              'name' => 'required|max:255',
+             'description' => 'required|max:22',
         ]);
         
         /*$request->contracts()->create([
@@ -63,18 +65,22 @@ class ContractController extends Controller
         $cont -> name = $request -> name;
         $cont -> description = $request -> description;
         $cont -> base_rate = $request -> base_rate;
-        $cont -> landlord_id = $request -> user() -> id;
-        $cont -> tenant_id = $cont->setTenant($request -> tenant);
+        $cont -> landlord_id = $request -> user() -> id;//in version1 landlord_id is innocuous
+        //$cont -> tenant_id = $cont->setTenant($request -> tenant);
+        $cont -> tenant_id = Auth::user()->id; //in version1 all users are tenants.
         $cont -> save();
         //Make a new plan in Stripe...
         \Stripe\Stripe::setApiKey(env('ASURENT_STRIPE_SECRET'));
+        
         $plan = \Stripe\Plan::create(array(
           "amount" => $cont->base_rate*100,
           "interval" => "month",
           "name" => $cont->name,
           "currency" => "usd",
-          "id" => $cont->id)
-        );
+          "id" => $cont->id,
+          "statement_descriptor" => $request->description
+        ));
+        
         //get tenant and add to plan
         $tenant = User::where('email', $request->email)->first();
         
@@ -124,6 +130,7 @@ class ContractController extends Controller
      public function edit(Request $request, Contract $contract)
      {
          
+         $this->authorize('edit', $contract);//only landlords can authorize edit of contract in version2.
          $contract -> name = $request -> name;
          $contract -> description = $request -> description;
          //$contract -> base_rate = $request -> base_rate;

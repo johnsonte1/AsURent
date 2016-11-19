@@ -19,7 +19,17 @@ class ContractPolicy
     */
     public function destroy(User $user, Contract $contract)
     {
-        //return true;
+        return $user->id == $contract->landlord_id || $user->id == $contract->tenant_id;
+    }
+    /**
+    * Determine if the given user can change a contract name and descriptor
+    * 
+    * @param user $user
+    * @param Task $task
+    * @return bool
+    */
+    public function edit(User $user, Contract $contract)
+    {
         return $user->id == $contract->landlord_id;
     }
 }

@@ -57,7 +57,7 @@
                 <ul class="nav nav-tabs">
 
                   <li role="presentation" class="active"><a class="navbar-brand" href="{{ url('/') }}">AsURent</a></li>
-                  <li role="presentation"><a href="{{ url('/home') }}">Home</a></li>
+                 <!-- <li role="presentation"><a href="{{ url('/home') }}">Home</a></li>-->
                   <li role="presentation"><a href="{{ route('lalatask') }}">Tasks</a></li>
                   <li role="presentation"><a href="{{ url('/contracts') }}">Contract</a></li>
                   @if (Auth::guest())

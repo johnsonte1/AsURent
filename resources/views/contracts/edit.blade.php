@@ -25,8 +25,9 @@
         </div>
         <div class="form-row">
             <div class="col-sm-6">
-                <label for="contract-rent" class="col-sm-12">Monthly Rent:</label>
-                <input type="number" name="base_rate" value="{{$contract->base_rate}}" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="currency form-control" id="contract-base_rate">
+                <label for="contract-rent" class="col-sm-12">Monthly Rent: ${{$contract->base_rate}}</label>
+               <!-- <p  name="base_rate" class="currency form-control" id="contract-base_rate">{{$contract->base_rate}}</p>-->
+               
             </div>
         </div>
         </div>
